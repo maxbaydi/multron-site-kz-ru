@@ -1,12 +1,11 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
-import { Inter, Geist_Mono } from "next/font/google"
+import { Geist_Mono } from "next/font/google"
 import { LocaleProvider } from "@/lib/locale-context"
 import { ThemeProvider } from "@/components/theme-provider"
 import { notoSans } from "@/lib/fonts"
 import "./globals.css"
 
-const _inter = Inter({ subsets: ["latin", "cyrillic"] })
 const geistMono = Geist_Mono({ 
   subsets: ["latin"],
   variable: "--font-geist-mono",

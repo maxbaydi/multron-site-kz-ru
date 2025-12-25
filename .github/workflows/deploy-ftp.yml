@@ -9,7 +9,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: secrets
+    environment:
+      name: secrets
     
     steps:
       - name: Checkout code
@@ -33,6 +34,11 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          port: 21
+          protocol: ftp
+          security: loose
+          timeout: 600000
+          log-level: verbose
           local-dir: ./out/
           server-dir: /multron.kz/
           exclude: |
